@@ -1,0 +1,84 @@
+@import "../../constants/constans.scss";
+
+
+.searchPanel{
+    @include flexRow(flex-end, space-between);
+    margin-bottom: toRem(24);
+    gap: toRem(24);
+   .input{  
+    font-family: $fontSize;
+   }
+   .button{
+   }
+   .label{
+    font-size: 16px;
+    margin-bottom: 10px;
+   }
+}
+
+
+
+.table{
+    width :100%;
+    table-layout: auto;
+    .header{
+        text-align: left;
+        background: rgba(57, 60, 77, 0.24);
+        backdrop-filter: blur(12px);
+        th{
+            padding : toRem(16) toRem(24);
+            div{
+                @include flexRow(center, space-between)
+            }
+            svg{
+                cursor: pointer;
+            }
+
+        }
+    }
+    .body{
+
+    }
+}
+
+.item{
+    &:nth-child(even){
+        background: rgba(57, 60, 77, 0.24);
+        backdrop-filter: blur(12px); 
+    }
+    &>*{
+        text-align: center;
+    }
+    td{
+        text-transform: capitalize;
+        height: toRem(75);
+    }
+    .status{
+        display: block;
+        position: relative;
+        border-radius: 50px;
+        display: block;
+        padding: toRem(14);
+    }
+    .fail{
+        background: rgba(221, 0, 85, 0.10);
+        color : rgba(221, 0, 85, 1);
+    }
+    .success{
+        background: rgba(0, 161, 144, 0.10);
+        color : rgba(0, 161, 144, 1);
+    }
+    .pending{
+        background: rgba(255, 108, 0, 0.10);
+        color : rgba(255, 108, 0, 1);
+    }
+    .amount{
+        &:before{
+            display: inline-block;
+            content: "$";
+            top :50%;
+            left :0;
+            padding: toRem(1);
+        }
+    }
+}
